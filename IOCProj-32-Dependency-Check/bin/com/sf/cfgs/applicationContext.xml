@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans default-dependency-check="none" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	<bean id ="date" class ="java.util.Date"/>
+	
+	<bean id ="stud" class ="com.sf.beans.StudentData">
+		<property name ="rollNo" value ="1111"/>
+		<property name ="std" value ="1"/>
+		<property name ="name" value ="Shrijeet"/>
+	</bean>
+	
+	<bean id ="crs" class ="com.sf.beans.Course" dependency-check="all">
+	<constructor-arg value ="Java"/>
+	<constructor-arg ref ="date"/>
+	<constructor-arg ref ="date"/>
+	</bean>
+
+</beans>
